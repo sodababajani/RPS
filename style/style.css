@@ -1,6 +1,12 @@
 :root {
+  --purpule: #3B2A9F;
+  --white : #ffffff;
 }
 
-* {
+*{
   box-sizing: border-box;
+  font-family: Poppins;
+}
+body{
+  background-color:var(--purpule);
 }
