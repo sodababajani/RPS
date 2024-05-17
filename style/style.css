@@ -10,3 +10,18 @@
 body{
   background-color:var(--purpule);
 }
+.section{
+  font-size: 36px;
+  font-weight: 700;
+  height: 100px;
+}
+#result{
+  color: var(--white);
+}
+.images{
+  gap: 100px;
+}
+.paper{
+  width: 40px;
+  height: 40px ;
+}
