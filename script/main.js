@@ -1,17 +1,18 @@
 const restart = document.querySelector('.submit');
 const result = document.getElementById('result');
 restart.addEventListener('click',()=>{
-	restart.innerText = 'PLAY AGAIN';
-	result.innerText = 'DRAW';
-	game();
-	restart.addEventListener('click', () => {
-		window.location.reload();
-	})
+    restart.innerText = 'PLAY AGAIN';
+    result.innerText = 'DRAW';
+    game();
+    restart.addEventListener('click', () => {
+        window.location.reload();
+    })
 })
 
+
 const game = () =>{
-    let ai_score = 0;
-    let youer_score = 0;
+    let copmuter_score = 0;
+    let user_score = 0;
     const rock = document.querySelector('.rock');
     const paper = document.querySelector('.paper');
     const scissor = document.querySelector('.scissor');
@@ -29,5 +30,58 @@ const game = () =>{
         })
     }
 
+    const winner = (user, computer) => {
+        const playerScoreBoard = document.querySelector('.youer-score');
+        const computerScoreBoard = document.querySelector('.Ai-score');
+        const report = document.querySelector('.report');
 
+        if (user == 'rock') {
+            if (computer == 'paper') {
+                result.innerText = 'You Lost!';
+                result.style.color = "red";
+                report.textContent = 'computer choosed paper'
+                copmuter_score++;
+                computerScoreBoard.textContent = copmuter_score.toString();
+
+            } else {
+                result.innerText = 'You Won!'
+                result.style.color = "green";
+                report.textContent = 'computer choosed scissor'
+                user_score++;
+                playerScoreBoard.textContent = user_score.toString();
+            }
+        }
+        else if (user == 'scissor') {
+            if (computer == 'rock') {
+                result.innerText = 'You Lost!';
+                result.style.color = "red";
+                report.textContent = 'computer choosed rock'
+                copmuter_score++;
+                computerScoreBoard.textContent = copmuter_score.toString();
+            } else {
+                result.innerText = 'You Won!';
+                result.style.color = "green";
+                report.textContent = 'computer choosed paper'
+                user_score++;
+                playerScoreBoard.textContent = user_score.toString();
+            }
+        }
+        else if (user == 'paper') {
+            if (computer == 'scissors') {
+                result.innerText = 'You Lost!';
+                result.style.color = "red";
+                report.textContent = 'computer choosed scissor'
+                copmuter_score++;
+                computerScoreBoard.textContent = copmuter_score.toString();
+            } else {
+                result.innerText = 'You Won!';
+                result.style.color = "green";
+                report.textContent = 'computer choosed rock'
+                user_score++;
+                playerScoreBoard.textContent = user_score.toString();
+            }
+        }
+    }
+    playGame();   
+}
 
